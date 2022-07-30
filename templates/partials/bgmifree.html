@@ -1,0 +1,43 @@
+<!--Content-->
+  
+  <!--promortinal-->
+  <div class="section section-3">
+      <div class="tag-thumbnail">
+        <div class="tag"><div class="rotate">BGMI <span></span> TOURNAMENTS</div></div>
+      </div>
+
+      <div class="scroll">
+        <div class="list">
+          {% for dest in dests %}
+          <!--LIST ITEM-->
+           <div class="list-item">
+            <!--PUBG MOBILE LIST IMAGE-->
+            <img src="{{dest.img.url}}" alt="" class="list-thumbnail">
+            <!--END PUBG MOBILE LIST IMAGE-->
+            <div class="list-desc">
+              <!--PUBG MOBILE LIST TITLE-->
+              <div class="list-title">{{dest.name}} </div>
+              <!--END PUBG MOBILE LIST TITLE-->
+              <div class="list-prize">PRIZE POOL:{{dest.price}}K
+                <!--PUBG MOBILE PRIZE AMOUNT-->
+                <span></span>
+                <!--END PUBG MOBILE PRIZE AMOUNT-->
+              </div>
+              <div class="list-entry">
+                <div class="list-entry">
+                  <button onclick="location.href='{{dest.link.url}}'" class="list-entry-btn">
+                    <!--PUBG MOBILE ENTRY AMOUNT-->
+                    FREE ENTRY
+                    <!--END PUBG MOBILE ENTRY AMOUNT-->
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--END LIST ITEM TOURNAMET-->
+          {% endfor %}
+          </div>
+      </div>
+    </div>
+  
+    

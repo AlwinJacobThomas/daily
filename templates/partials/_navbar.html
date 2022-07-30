@@ -1,0 +1,49 @@
+{% load static %}
+
+<!--SideNav-->
+  <div id="mySidenav" class="sidenav">
+    <div class="sidenav-main">
+      <div class="sub-header">
+        <div class="open-nav-btn">
+          <button style="font-size:25px;cursor:pointer;color: #d4d4d4;border: 3px solid grey;border-radius: 8px;padding: 5px 15px;background: transparent;" onclick="closeNav()">&#9776;</button>
+        </div>
+        <!--<img src="{% static 'images/logo.png' %}" alt="" class="logo">--> 
+        <div class="logo-title">eSports<span style="color: white;">Daily</span></div>
+      </div>
+
+      <div class="nav-item">
+        <div class="fas-ico fas-ico-active">
+          <i class="fas fa-home"></i>
+        </div>
+        <div class="nav-item-title">&nbspHOME</div>
+      </div>
+
+      <div class="nav-item">
+        <div class="fas-ico">
+          <i class="fas fa-info"></i>
+        </div>
+        <div class="nav-item-title">&nbspABOUT</div>
+      </div>
+
+    </div>
+    <div class="sidenav-sub" onclick="closeNav()"></div>
+  </div>
+  <!--End SideNav-->
+
+  <!--Header-->
+  <div class="header">
+    <div class="sub-header">
+      <div class="open-nav-btn">
+        <button style="font-size:25px;cursor:pointer;color: #d4d4d4;border: 1px solid grey;border-radius: 8px;padding: 5px 15px;background: transparent;" onclick="openNav()">&#9776;</button>
+      </div>
+      <img src="{% static 'images/logo.png' %}" alt="" class="logo">
+    <div class="logo-title">eSports<span style="color: white;">Daily</span></div>
+      {% if user.is_authenticated %}
+      <div class="logo-title">Hello<span style="color: white;"> {{ fname }}</span></div>
+      <button type='submit'><a href='/signout'>Sign Out</a></button>
+      {% else %}
+      <button type='submit'><a href='/signin'>Sign In</a></button>
+      {% endif %}
+    </div>
+  </div>
+  <!--End Header-->
