@@ -8,4 +8,5 @@ urlpatterns = [
     path('signin', views.signin),
     path('signout', views.signout),
     path('postanad', views.postanad),
+    #path('details/<id:pk>',views.details,  name= 'details')
 ]

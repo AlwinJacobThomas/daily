@@ -5,7 +5,6 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
-from. models import BGMI
 # Create your views here.
 
 def index(request):
@@ -89,9 +88,20 @@ def postanad(request):
         name = request.POST['name']
         img = request.FILES.get('img')
         desc = request.POST['desc']
-
-        new_post = BGMI.objects.create(name=name, img=img, desc=desc)
+        price = request.POST['price']
+        link = request.POST['link']
+      
+        new_post = BGMI.objects.create(name=name, img=img, desc=desc,price=price,link = link)
         new_post.save()
         return HttpResponse("successful")
+        return redirect('index')
+
     return render(request, 'postanad.html')
+
+def details(request):
+    details = BGMI.objects.get(id = id)
+    data = {
+      'details':details
+    }
+    return render (request,'details.html',data)
 

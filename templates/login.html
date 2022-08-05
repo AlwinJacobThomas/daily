@@ -1,11 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
 <html>
   <head>
-  </head>
-  <title>sign up</title>
-<form action="/signin" method="post">
-  {% csrf_token %}
-  username<input type="text" name="username"><br>
-  password<input type="password" name="pass1"><br>
-  <button>Sign In</button>
-</body>
+      <link rel="stylesheet" href="{% static 'styles/login.min.css' %}">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+	<link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
+  
+  <!--End stylesheet-->
+
+   <!--Fonts-->
+  <!--<link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+  <link href="'https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet"> 
+  <!--End Fonts-->
+
+  <!-- FONTAWESOME -->
+  <script src="https://kit.fontawesome.com/114dee6860.js" crossorigin="anonymous"></script>
+  <!-- END FONTAWESOME --> 
+      <title>daily {% block title %}{% endblock %}</title>
+  </head>-->
+  <body>
+    {% include 'loginpart.html' %}
+
+
+  </body>
 </html>

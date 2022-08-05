@@ -9,7 +9,7 @@ class BGMI (models.Model):
   img = models. ImageField(upload_to='pics')
   desc = models.TextField()
   created_at = models.DateTimeField(default=datetime.now)
-  price = models.IntegerField()
+  price = models.IntegerField(null=True)
   
 def __str__(self):
     return self.name
