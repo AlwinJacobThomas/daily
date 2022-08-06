@@ -1,28 +1,38 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
   <head>
-      <link rel="stylesheet" href="{% static 'styles/login.min.css' %}">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
-	<link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'>
-  
-  <!--End stylesheet-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Login Form | CodingLab</title> -->
+    <link rel="stylesheet" href="{% static 'styles/stylelogin.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="title"><span>Login Form</span></div>
+        <form action="/signin" method="post">
+            {% csrf_token %}
 
-   <!--Fonts-->
-  <!--<link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
-  <link href="'https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap" rel="stylesheet"> 
-  <!--End Fonts-->
-
-  <!-- FONTAWESOME -->
-  <script src="https://kit.fontawesome.com/114dee6860.js" crossorigin="anonymous"></script>
-  <!-- END FONTAWESOME --> 
-      <title>daily {% block title %}{% endblock %}</title>
-  </head>-->
-  <body background-color='#1f2029'>
-    {% include 'loginpart.html' %}
-
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Enter Your UserName"  name="username" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" name="pass1" required>
+          </div>
+          <div class="pass"><a href="#">Forgot password?</a></div>
+          <div class="row button">
+            <input type="submit" value="Login">
+            <!--<button>Login</button>
+          </div>-->
+          <div class="signup-link">Not a member? <a href="/signup">Signup now</a></div>
+        </form>
+      </div>
+    </div>
 
   </body>
 </html>
