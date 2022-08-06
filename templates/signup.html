@@ -1,15 +1,51 @@
-<html>
+{% load static %}
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/styleregister.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
   </head>
-  <title>sign up</title>
-<form action="signup" method="post">
-  {% csrf_token %}
- name <input type="text" name="fname"><br>
-  username<input type="text" name="username"><br>
-  org name<input type="text" name="orgname"><br>
-  email<input type="email" name="email"><br>
-  password<input type="password" name="pass1"><br>
-  confirm password<input type="confirmpassword" name="pass2"><br>
-  <button>Create An Account</button>
-</body>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="title"><span>Register  Now</span></div>
+        <form action="/signup" method="post">
+            {% csrf_token %}
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <!--<input type="text" placeholder="Enter Your First Name"  name="fname" required>-->
+            <input type="text" placeholder="Enter Your First Name" name="fname">
+          </div>
+          <div class="row">
+            <i class="fas fa-lock"></i>
+            <input type="text" placeholder="Enter Your Username" name="username" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Enter Your OrgName"  name="orgname" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="email" placeholder="Enter Your email"  name="email" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="password" placeholder="Password"  name="pass1" required>
+          </div>
+          <div class="row">
+            <i class="fas fa-user"></i>
+            <input type="password" placeholder="Confirm Password"  name="pass2" required>
+          </div>
+          <!--<div class="pass"><a href="#">Forgot password?</a></div>-->
+          <div class="row button">
+            <input type="submit" value="register Now">
+          <div class="signup-link">Already  a member? <a href="/signin">SignIn now</a></div>
+        </form>
+      </div>
+    </div>
+
+  </body>
 </html>

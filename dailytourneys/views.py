@@ -53,7 +53,7 @@ def signup(request):
 
 
      myuser = User.objects.create_user(username,email,pass1)
-     myuser.name = fname
+     myuser.first_name = fname
 
      myuser.save()
   
