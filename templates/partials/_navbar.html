@@ -39,7 +39,7 @@
       <img src="{% static 'images/logo.png' %}" alt="" class="logo">
     <div class="logo-title">eSports<span style="color: white;">Daily</span></div>
       {% if user.is_authenticated %}
-      <div class="logo-title">Hello<span style="color: white;"> {{ fname }}</span></div>
+      <div class="logo-title">Hello<span style="color: white;"> {{ first_name }}</span></div>
       <button type='submit'><a href='/signout'>Sign Out</a></button>
       {% else %}
       <button type='submit'><a href='/signin'>Sign In</a></button>

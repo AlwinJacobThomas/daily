@@ -5,6 +5,9 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth import get_user_model
+User = get_user_model()
+
 # Create your views here.
 
 def index(request):
@@ -15,14 +18,14 @@ def index(request):
 def signin(request):
   if request.method == "POST":
      username = request.POST['username']
-     pass1 = request.POST['pass1']
+     password1 = request.POST['password1']
 
-     user = authenticate(username=username,password=pass1)
+     user = authenticate(username=username,password=password1)
 
      if user  is not None:
        login(request,user)
-       fname=user.first_name
-       return render (request,"index.html",{'fname':fname})
+       first_name=user.first_name
+       return render (request,"index.html",{'first_name':first_name})
 
      else:
        messages.error(request,"bad credientials")
@@ -33,11 +36,12 @@ def signin(request):
 def signup(request):
   if request.method == "POST":
      username = request.POST['username']
-     fname = request.POST['fname']
+     first_name = request.POST['first_name']
      orgname = request.POST['orgname']
      email = request.POST['email']
-     pass1 = request.POST['pass1']
-     pass2 = request.POST['pass2']
+     password1 = request.POST['password1']
+     password2 = request.POST['password2']
+     about = request.POST['about']
 
      if User.objects.filter(username=username):
        messages.error(request,"aldreay taken")
@@ -47,13 +51,14 @@ def signup(request):
        messages.error(request,"email aldreay taken")
        return redirect('index')
 
-     if pass1 != pass2:
+     if password1 != password2:
        messages.error(request,"password not matching")
        return redirect('index')
 
 
-     myuser = User.objects.create_user(username,email,pass1)
-     myuser.first_name = fname
+     myuser = User.objects.create_user(username=username,password=password1,first_name = first_name,email=email,orgname = orgname, about = about)
+     #myuser.orgname = orgname,
+     #myuser.about = about
 
      myuser.save()
   
@@ -81,7 +86,8 @@ def signout(request):
 
   #else:
     #return redirect('postanad')    
-
+#@login_required(login_url='signin')
+@login_required()
 def postanad(request):
 
     if request.method == 'POST':
