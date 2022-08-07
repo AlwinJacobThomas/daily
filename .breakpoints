@@ -1,5 +1,27 @@
 {
   "files": {
+    "dailytourneys/models.py": [
+      {
+        "id": "c3855f5e-15fb-49e8-8295-fbf7fa46e7b1",
+        "line": 24,
+        "version": 2135,
+        "index": 673
+      },
+      {
+        "id": "89943957-4af9-400d-84be-814fd26025f4",
+        "line": 25,
+        "version": 2135,
+        "index": 716
+      }
+    ],
+    "django_project/static/styles/stylepostanad.css": [
+      {
+        "id": "fd3c3f08-5d5c-4359-b569-8e6277fb1ca1",
+        "line": 143,
+        "version": 1,
+        "index": 2943
+      }
+    ],
     "django_project/templates/index.html": [
       {
         "id": "51b54ee0-048b-429a-83b6-8eb51965cd59",

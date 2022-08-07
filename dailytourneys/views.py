@@ -25,11 +25,11 @@ def signin(request):
      if user  is not None:
        login(request,user)
        first_name=user.first_name
-       return render (request,"index.html",{'first_name':first_name})
+       return render (request,'index.html',{'first_name':first_name})
 
      else:
        messages.error(request,"bad credientials")
-       return render(request,'index')
+       return redirect (request,'index')
        
   return render (request, 'login.html',)
 
@@ -87,7 +87,7 @@ def signout(request):
   #else:
     #return redirect('postanad')    
 #@login_required(login_url='signin')
-@login_required()
+#@login_required()
 def postanad(request):
 
     if request.method == 'POST':

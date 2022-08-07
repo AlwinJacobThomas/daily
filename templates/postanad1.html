@@ -1,0 +1,20 @@
+
+<html>
+  <head>
+  </head>
+  <title>post an ad</title>
+  <body>
+<form action="postanad" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+name<input type='text' name="name"><br>
+link<input type='text' name="link"><br>
+desc<input type='text' name="desc"><br>
+price<input type='text' name="price"><br>
+upload<input type='file' name="img"><br>
+  <button>Submit</button>
+
+  
+
+</form>
+</body>
+</html>

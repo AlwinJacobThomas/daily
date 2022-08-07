@@ -33,15 +33,7 @@ class CustomAccountManager(BaseUserManager):
    raise ValueError('super user not superuser=True')
   return self.create_user(email,username,first_name,password,**other_fields)
 
- #def create_user(self,email,username,first_name,password,**other_fields):
- def create_user(self, email,
-                    username,
-                    password,
-                    first_name,
-                    orgname,
-                    about,
-                    **other_fields,
-                    ):
+ #def create_user(self,email,username,first_name,password,orgname,about,**other_fields):
   
   if not username:
             raise ValueError("Unique username is required")
